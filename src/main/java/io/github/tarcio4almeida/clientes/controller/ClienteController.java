@@ -18,7 +18,7 @@ import org.springframework.web.server.ResponseStatusException;
 import io.github.tarcio4almeida.clientes.entity.Cliente;
 import io.github.tarcio4almeida.clientes.repositories.ClienteRepository;
 
-@RestController
+@RestController // é um plus de Controller + ResponseBody
 @RequestMapping("/api/clientes")
 public class ClienteController {
 
