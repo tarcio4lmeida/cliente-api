@@ -8,6 +8,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,6 +32,7 @@ import io.github.tarcio4almeida.clientes.util.BigDecimalConverter;
 @RestController
 @RequestMapping("api/servicos-prestados")
 public class ServicoPrestadoController  {
+	
 	@Autowired
 	private ServicoPrestadoRepository repository;
 	
@@ -78,7 +80,7 @@ public class ServicoPrestadoController  {
 	@GetMapping("{id}")
 	public ServicoPrestado acharPorId(@PathVariable Integer id) {
 		return repository.findById(id)
-				.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "ServicoPrestado não encontrado"));
+				.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Servico Prestado não encontrado"));
 	}
 
 	@DeleteMapping("{id}")
@@ -87,7 +89,7 @@ public class ServicoPrestadoController  {
 		repository.findById(id).map(ServicoPrestado -> { // metodo map -> mapeia um objeto para fazer algo
 			repository.delete(ServicoPrestado);
 			return Void.TYPE;
-		}).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "ServicoPrestado não encontrado"));
+		}).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Servico Prestado não encontrado"));
 	}
 
 	@PutMapping("{id}")
@@ -95,6 +97,6 @@ public class ServicoPrestadoController  {
 	public void atualizar(@PathVariable Integer id, @RequestBody @Valid ServicoPrestado ServicoPrestadoAtualizado) {
 		repository.findById(id).map(ServicoPrestado -> {
 			return repository.save(ServicoPrestado);
-		}).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "ServicoPrestado não encontrado"));
+		}).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Servico Prestado não encontrado"));
 	}
 }	

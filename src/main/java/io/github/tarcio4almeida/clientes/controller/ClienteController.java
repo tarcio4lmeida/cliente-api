@@ -23,7 +23,6 @@ import io.github.tarcio4almeida.clientes.repositories.ClienteRepository;
 
 @RestController // é um plus de Controller + ResponseBody
 @RequestMapping("/api/clientes")
-@CrossOrigin("*")
 public class ClienteController {
 
 	@Autowired
