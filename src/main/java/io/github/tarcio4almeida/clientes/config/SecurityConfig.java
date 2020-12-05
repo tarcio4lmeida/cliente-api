@@ -11,6 +11,8 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import io.github.tarcio4almeida.clientes.service.UsuarioService;
+
 @EnableWebSecurity // como ela já tem dentro dela a anotation configuration, logo aqui nao é preciso
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
