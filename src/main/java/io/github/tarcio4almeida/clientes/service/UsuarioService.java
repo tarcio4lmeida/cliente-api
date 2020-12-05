@@ -1,5 +1,7 @@
 package io.github.tarcio4almeida.clientes.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -39,4 +41,9 @@ public class UsuarioService implements UserDetailsService {
                 .build()
                 ;
     }
+
+	public List<Usuario> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
